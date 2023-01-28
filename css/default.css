@@ -1,0 +1,39 @@
+:root {
+  background-color: black;
+
+  color: #ddd;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: clamp(5rem, 10vw, 10rem) clamp(2rem, 5vw, 5rem);
+  padding-bottom: 50vh;
+  background-color: black;
+}
+
+section h1 {
+  margin: 2rem 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #fff;
+}
+
+section h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+
+section p {
+  text-align: justify;
+  font-size: 1.125rem;
+}

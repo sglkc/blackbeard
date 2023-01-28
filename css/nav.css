@@ -1,0 +1,94 @@
+nav {
+  margin: 2rem;
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  right: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+nav button {
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  right: 2rem;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+nav button::before, nav button::after {
+  position: absolute;
+  transition-property: opacity, transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+}
+
+nav button::before {
+  content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h18M3 12h18M3 19h18"%2F%3E%3C%2Fsvg%3E');
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+nav button::after {
+  content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 15l6-6l6 6"%2F%3E%3C%2Fsvg%3E');
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+nav.open button::before {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+nav.open button::after {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+nav a {
+  padding-right: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: 0.25rem;
+  border-right: 2px solid transparent;
+  transition-property: padding-right;
+  transition-timing-function: ease;
+  transition-duration: 500ms;
+}
+
+nav a.active, nav a:hover {
+  padding-right: 1rem;
+  border-right-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  nav button {
+    display: inline;
+  }
+
+  nav div {
+    margin-top: 3.5rem;
+  }
+
+  nav div a {
+    padding-right: 0rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition-property: padding-right, transform;
+  }
+
+  nav.open div a {
+    transform: scaleY(1);
+  }
+}

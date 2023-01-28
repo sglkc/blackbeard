@@ -1,0 +1,134 @@
+@keyframes bg-slide {
+  from { top: 100%; } to { top: 0%; }
+}
+
+@keyframes bg-gap {
+  from { gap: clamp(1rem, 10vw, 5rem); } to { gap: 0rem; }
+}
+
+@keyframes opacity {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes scroll-scale {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  50% {
+    transform-origin: top;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  51% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+#top {
+  margin: unset;
+  padding: unset;
+  background-color: transparent;
+  z-index: -100;
+  height: 100vh;
+}
+
+#top-bg {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  animation: 500ms ease 750ms bg-gap both;
+}
+
+#top-bg > .simpleParallax {
+  flex-grow: 1;
+}
+
+#top-bg img {
+  position: relative;
+  animation-name: bg-slide, opacity;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-fill-mode: both;
+  max-height: 100%;
+  max-width: unset;
+  object-fit: contain;
+  object-position: center;
+}
+
+#top-bg :nth-child(1) img {
+  animation-delay: 0ms;
+}
+
+#top-bg :nth-child(2) img {
+  animation-delay: 150ms;
+}
+
+#top-bg :nth-child(3) img {
+  animation-delay: 300ms;
+}
+
+#top-title {
+  margin: 0 5vw;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  animation: 500ms ease 500ms opacity both;
+}
+
+#top-title h1 {
+  margin: 0;
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(2.25rem, 7.5vw, 7rem);
+  font-weight: bold;
+}
+
+#top-title h2 {
+  margin-left: clamp(0.125rem, 1vw, 1rem);
+  padding-left: clamp(0.25rem, 2vw, 1rem);
+  border-left: white solid clamp(0.125rem, 0.5vw, 0.25rem);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 3vw, 2rem);
+  letter-spacing: 0.5;
+}
+
+#top-scroll {
+  position: absolute;
+  margin: auto;
+  padding: 2rem 1px;
+  max-width: 2px;
+  background-color: white;
+  inset: auto 0 1rem;
+  animation: 3s ease 1s scroll-scale infinite both;
+}
+
+@media screen and (max-width: 768px) {
+  #top {
+    height: 100vh;
+  }
+
+  #top-bg {
+    flex-direction: column;
+  }
+
+  #top-bg img {
+    width: 100%;
+    transform: none!important;
+    object-fit: cover;
+  }
+
+  #top-bg :not(:first-child) img {
+    object-position: 0 25%;
+  }
+}
