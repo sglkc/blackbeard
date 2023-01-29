@@ -45,7 +45,7 @@
   display: flex;
   position: absolute;
   inset: 0;
-  animation: 500ms ease 750ms bg-gap both;
+  animation: 500ms ease 1s bg-gap both;
 }
 
 #top-bg > .simpleParallax {
@@ -65,15 +65,15 @@
 }
 
 #top-bg :nth-child(1) img {
-  animation-delay: 0ms;
-}
-
-#top-bg :nth-child(2) img {
   animation-delay: 150ms;
 }
 
-#top-bg :nth-child(3) img {
+#top-bg :nth-child(2) img {
   animation-delay: 300ms;
+}
+
+#top-bg :nth-child(3) img {
+  animation-delay: 450ms;
 }
 
 #top-title {

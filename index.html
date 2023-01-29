@@ -5,9 +5,8 @@
     <title>BLACK</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/aos.min.css" />
-    <script src="js/simpleParallax.min.js"></script>
-    <script src="js/aos.min.js"></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/simpleParallax.min.js" defer></script>
+    <script src="js/aos.min.js" defer></script>
   </head>
   <body>
     <nav>
@@ -15,7 +14,7 @@
       <div>
         <a href="#top">TOP</a>
         <a href="#about">ABOUT</a>
-        <a href="#about">PRODUCTS</a>
+        <a href="#products">PRODUCTS</a>
         <a href="#about">TUTORIAL</a>
         <a href="#about">NEWS</a>
       </div>
@@ -35,18 +34,56 @@
       </section>
       <section id="about">
         <h2 data-aos="fade-up">About</h2>
-        <h1>AWARD WINNING BRAND</h1>
-        <div class="flex">
-          <p>
+        <h1 data-aos="fade-up" data-aos-delay="100">IDEA</h1>
+        <article>
+          <p data-aos="fade-up" data-aos-delay="200">
+            Introducing Blackbeard, the ultimate shaving brand for men. Our
+            line of products is specifically designed to tackle the toughest of
+            beards, providing a smooth and close shave every time.
+          </p>
+          <p data-aos="fade-up" data-aos-delay="300">
+            Our specially formulated shaving cream, aftershave, and razor blades
+            work together to provide a comfortable and irritation-free shaving
+            experience. With Blackbeard, you'll look and feel your best, whether
+            you're heading to work or a night out on the town. So why settle for
+            a mediocre shave? Upgrade to Blackbeard and become the ultimate
+            gentleman.
+          </p>
+        </article>
+        <h1 data-aos="fade-up" data-aos-delay="100">AWARD WINNING BRAND</h1>
+        <article>
+          <p data-aos="fade-up" data-aos-delay="250">
             Blackbeard has won a best brand award because of its exceptional
             quality and performance. Blackbeard is also committed to using
             natural, high-quality ingredients in all of its products, which is a
             major factor that sets it apart from other shaving brands on the
             market.
           </p>
-          <h1>PP</h1>
-        </div>
+          <div>
+            <img src="assets/award.png" />
+            <img src="assets/award-2.png" />
+          </div>
+        </article>
+        <img class="parallax" src="assets/about-bg.png" />
+      </section>
+      <section id="products">
+        <h2 data-aos="fade-up">PRODUCTS</h2>
+        <h1 data-aos="fade-up" data-aos-delay="100">AWARD WINNING BRAND</h1>
+        <article>
+          <p data-aos="fade-up" data-aos-delay="250">
+            Blackbeard has won a best brand award because of its exceptional quality and performance.
+            <br />
+            Blackbeard is also committed to using high-quality ingredients in all of its products,
+            <br />
+            which is a major factor that sets it apart from other shaving brands on the market.
+          </p>
+          <div data-aos="flip-down" data-aos-delay="400">
+            <img src="assets/award.png" />
+            <img src="assets/award-2.png" />
+          </div>
+        </article>
       </section>
     </main>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,52 @@
+#about {
+  overflow: hidden;
+}
+
+#about h1, #about article {
+  margin-left: 5rem;
+}
+
+#about article {
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  z-index: 200;
+}
+
+#about article p {
+  max-width: 72ch;
+}
+
+#about article div {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+#about article div img {
+  max-width: 35vw;
+}
+
+#about div.simpleParallax {
+  margin: 0 5rem clamp(-10rem, -10vw, -5rem);
+  padding-top: 5rem;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  #about h1, #about article {
+    margin-left: 0;
+  }
+
+  #about article {
+    margin-right: 2rem;
+  }
+
+  #about div.simpleParallax {
+    padding: 12.5rem 0;
+    margin: 0;
+    transform: scale(1.5);
+  }
+}

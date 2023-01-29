@@ -14,14 +14,17 @@
   scroll-behavior: smooth;
 }
 
+img {
+  height: 100%;
+}
+
 section {
   padding: clamp(5rem, 10vw, 10rem) clamp(2rem, 5vw, 5rem);
-  padding-bottom: 50vh;
   background-color: black;
 }
 
 section h1 {
-  margin: 2rem 0;
+  margin: 3rem 0 2rem;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   color: #fff;
@@ -36,4 +39,5 @@ section h2 {
 section p {
   text-align: justify;
   font-size: 1.125rem;
+  font-style: italic;
 }

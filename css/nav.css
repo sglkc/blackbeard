@@ -5,7 +5,9 @@ nav {
   top: 0;
   right: 0;
   font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
   color: #fff;
+  animation: 1s ease 1s opacity both;
 }
 
 nav button {
@@ -73,6 +75,11 @@ nav a.active, nav a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  nav {
+    margin: 1rem 1.5rem;
+    font-size: 0.75rem;
+  }
+
   nav button {
     display: inline;
   }
