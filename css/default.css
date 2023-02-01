@@ -28,6 +28,7 @@ section h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   color: #fff;
+  hyphens: manual;
 }
 
 section h2 {
@@ -37,7 +38,6 @@ section h2 {
 }
 
 section p {
-  text-align: justify;
   font-size: 1.125rem;
   font-style: italic;
 }

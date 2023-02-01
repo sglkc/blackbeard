@@ -1,13 +1,25 @@
 nav {
   margin: 2rem;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   z-index: 900;
   top: 0;
+  bottom: 0;
   right: 0;
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   color: #fff;
   animation: 1s ease 1s opacity both;
+}
+
+nav span {
+  flex-grow: 0;
+  transition: flex-grow 750ms ease-out;
+}
+
+nav.expand span {
+  flex-grow: 0.5;
 }
 
 nav button {
@@ -24,19 +36,24 @@ nav button {
 
 nav button::before, nav button::after {
   position: absolute;
+  padding: 1.25rem;
+  background-size: cover;
+  background-position: top right;
   transition-property: opacity, transform;
   transition-duration: 500ms;
   transition-timing-function: ease;
 }
 
 nav button::before {
-  content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h18M3 12h18M3 19h18"%2F%3E%3C%2Fsvg%3E');
+  content: '';
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h18M3 12h18M3 19h18"%2F%3E%3C%2Fsvg%3E');
   opacity: 1;
   transform: rotate(0deg);
 }
 
 nav button::after {
-  content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 15l6-6l6 6"%2F%3E%3C%2Fsvg%3E');
+  content: '';
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="2.5rem" height="2.5rem" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 15l6-6l6 6"%2F%3E%3C%2Fsvg%3E');
   opacity: 0;
   transform: rotate(180deg);
 }
@@ -59,14 +76,20 @@ nav div {
 }
 
 nav a {
+  padding: 0rem;
   padding-right: 0.5rem;
   color: inherit;
   text-decoration: none;
   letter-spacing: 0.25rem;
   border-right: 2px solid transparent;
-  transition-property: padding-right;
-  transition-timing-function: ease;
+  transition-property: padding, padding-right;
+  transition-timing-function: ease-out, ease;
   transition-duration: 500ms;
+}
+
+nav.expand a {
+  padding: 0.5rem;
+  background-color: #0003;
 }
 
 nav a.active, nav a:hover {
@@ -74,28 +97,36 @@ nav a.active, nav a:hover {
   border-right-color: white;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 912px) {
   nav {
     margin: 1rem 1.5rem;
-    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 3.5vw, 1rem);
+  }
+
+  nav.expand span {
+    flex-grow: 0;
   }
 
   nav button {
     display: inline;
   }
 
-  nav div {
-    margin-top: 3.5rem;
+  nav button::before, nav button::after {
+    padding: clamp(1rem, 3.5vw, 1.25rem);
   }
 
-  nav div a {
-    padding-right: 0rem;
+  nav div {
+    margin-top: clamp(3rem, 10vw, 3.5rem);
+  }
+
+  nav a {
+    padding: 0.25rem 0.5rem;
     transform: scaleY(0);
     transform-origin: top;
-    transition-property: padding-right, transform;
+    transition-property: padding, padding-right, transform;
   }
 
-  nav.open div a {
+  nav.open a {
     transform: scaleY(1);
   }
 }

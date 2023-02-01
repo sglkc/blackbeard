@@ -1,6 +1,0 @@
-.flex, .flex-col {
-  display: flex;
-  gap: 2rem;
-}
-.flex-col { flex-direction: column; }
-.grow-1 { flex-grow: 1; }

@@ -35,7 +35,7 @@
   min-height: 100vh;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 912px) {
   #about h1, #about article {
     margin-left: 0;
   }
